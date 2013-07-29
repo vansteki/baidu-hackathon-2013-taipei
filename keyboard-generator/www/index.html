@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>鍵盤發電</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="prize"></div>
+		<audio id="sound">
+			<source src="/sound/yooooooo.ogg" type="audio/ogg">
+			<source src="/sound/yooooooo.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<center>
+						<table id="main" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+									<div id="mask">
+										<div id="per">0%</div>
+										<div id="bulb" alt="鍵盤方向鍵← →連打或滑鼠左鍵連擊!!!" title="鍵盤方向鍵← →連打或滑鼠左鍵連擊!!!"></div>
+									</div>
+								</td>
+							</tr>
+						</table><br />
+						<div id="people">目前有0個人在愛地球</div><br />
+						<div id="tip">使用方法：鍵盤方向鍵← →連打或滑鼠左鍵連擊!!!</div>
+					</center>
+				</div>
+			</div>
+		</div>
+		<div id="fb-root"></div>
+	</body>
+	<script src="/js/jquery-1.8.3.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/socket.handler.js"></script>
+	<script type="text/javascript">
+		var hold = false
+
+		$("#bulb").click(function() {
+			socket.emit("desc_percent", {})
+			syncPercent()
+		})
+
+		$(window).keyup(function(e) {
+			if(e.which == 37) {
+				hold = true
+			}
+			else if(e.which == 39 && hold == true) {
+				hold = false
+				socket.emit("desc_percent", {})
+			}
+			syncPercent()
+		})
+	</script>
+</html>

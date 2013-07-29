@@ -1,0 +1,20 @@
+{
+	"name": "keyboard-generator",
+	"version": "0.0.1b",
+	"description": "鍵盤發電",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:tpai/keyboard-generator.git"
+	},
+	"dependencies": {
+		"socket.io": "0.9.x",
+		"express": "3.0.x"
+	},
+	"engines": {
+		"node": "0.8.x"
+	}
+}

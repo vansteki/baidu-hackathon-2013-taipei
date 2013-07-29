@@ -1,0 +1,53 @@
+#people {
+	font-size: 80px;
+	line-height: 90px;
+	text-align: center;
+}
+
+#main {
+	width: 297px;
+	height: 298px;
+	text-align: center;
+}
+
+td {
+	vertical-align: top;
+}
+
+#mask {
+	width: 297px;
+	height: 0px; /* 298px */
+	background-color: yellow;
+}
+
+#per {
+	font-size: 22px;
+	line-height: 30px;
+	position: fixed;
+	left: 48%;
+	top: 22%;
+}
+
+#bulb {
+	width: 297px;
+	height: 298px;
+	cursor: pointer;
+	background: url(http://i.imgur.com/PBxXKjw.png);
+}
+
+#prize {
+	display: none;
+	background: url(http://i.imgur.com/RV2eFAV.jpg?1) no-repeat;
+	width: 1184px;
+	height: 759px;
+	position: absolute;
+	margin-top: -379px;
+	margin-left: -592px;
+	left: 50%;
+	top: 50%;
+	z-index: 99;
+}
+
+#sound {
+	display: none;
+}

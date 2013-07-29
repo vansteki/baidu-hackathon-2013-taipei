@@ -1,0 +1,161 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ibulb</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<h1 class="brand"><a href="/">iBulb</a></h1>
+					<nav class="pull-right">
+						<ul id="menu-main" class="nav">
+							<li><a id="home" title="回到首頁">Home</a></li>
+							<li><a id="about" title="關於團隊">About</a></li>
+							<li><a id="scene" title="場景切換">Scene</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div id="header-wrapper" class="header-slider">
+			<div class="logo">
+				<br /><br /><br /><br />
+				<img src="http://i.imgur.com/xQeVaWN.png" width="150" />
+				<br /><br />
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<ul class="home-slide">
+							<li class="home-slide-content">
+								<p>
+									We love earth
+								</p>
+							</li>
+							<li class="home-slide-content">
+								<p style="display: none;">
+									Coding for green life
+								</p>
+							</li>
+							<li class="home-slide-content">
+								<p style="display: none;">
+									Live long and prosper
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sec1" class="section gray">
+			<div class="container">
+				<h4>About Us</h4>
+				<div class="row">
+					<div class="span4 offset1">
+						<div class="intro">
+							<h2>Live in green</h2>
+							<p>
+								Our goals are to work on environmental and human related issues to preserve the natural balance between humans and nature. We coding for green life.
+							</p>
+						</div>
+					</div>
+					<div class="span6">
+						<div class="intro plus">
+							<img src="http://i.imgur.com/f8ger51.png" width="180">
+							 + 
+							<img src="http://i.imgur.com/w0LLpGQ.png" width="180">
+						</div>
+					</div>
+				</div><br /><br />
+				<div class="row center">
+					<div class="offset3 span2">
+						<img src="http://i.imgur.com/okm0GN8.png" /><br />
+						<h3>Steveice</h3>
+						<span class="char">Director</span>
+					</div>
+					<div class="span2" style="margin-top: 6px;">
+						<img src="http://i.imgur.com/EjtTYbO.png" /><br />
+						<h3>Vansdog</h3>
+						<span class="char">Trouble Shooter</span>
+					</div>
+					<div class="span2">
+						<img src="http://i.imgur.com/FzOSa19.png" /><br />
+						<h3>Tonypai</h3>
+						<span class="char">Web Developer</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sec2" class="section orange">
+			<div class="container">
+				<h4>Scene</h4>
+				<div class="row">
+					<div class="span3">
+						<div id="sunny" class="content">
+							<img src="http://i.imgur.com/HYl1896.png">
+							<h2>Sunny</h2>
+							<p>
+								Hot and wet. (In Taiwan)
+							</p>
+						</div>
+					</div>
+					<div class="span3">
+						<div id="rain" class="content">
+							<img src="http://i.imgur.com/kDUqTuY.png">
+							<h2>Raining</h2>
+							<p>
+								Feel wet and blue.
+							</p>
+						</div>
+					</div>
+					<div class="span3">
+						<div id="snow" class="content">
+							<img src="http://i.imgur.com/gWH7jr9.png">
+							<h2>Snowing</h2>
+							<p>
+								Extremely cold.
+							</p>
+						</div>
+					</div>
+					<div class="span3">
+						<div id="desert" class="content">
+							<img src="http://i.imgur.com/ufLNHZm.png">
+							<h2>Desert</h2>
+							<p>
+								Dry and hot.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="/js/jquery-1.8.3.min.js"></script>
+	<script src="/js/button.handler.js"></script>
+	<script type="text/javascript">
+		var nextShow = false
+		setInterval(function () {
+			$.each($("li.home-slide-content p"), function (key, val) {
+				if(nextShow == true) {
+					$(val).delay(500).fadeIn(500)
+					nextShow = false
+				}
+				else if($(val).css("display") == "block") {
+					$(val).fadeOut(500)
+					if(key == $("li.home-slide-content p").length - 1) {
+						$($("li.home-slide-content p")[0]).delay(500).fadeIn(500)
+						nextShow = false
+					}
+					else {
+						nextShow = true
+					}
+				}
+			})
+		}, 4000)
+	</script>
+</html>
